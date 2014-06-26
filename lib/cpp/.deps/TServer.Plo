@@ -1,0 +1,66 @@
+TServer.lo: src/thrift/server/TServer.cpp ../../config.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/sys/time.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/features.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/sys/cdefs.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/wordsize.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/gnu/stubs.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/gnu/stubs-64.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/types.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/typesizes.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/time.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/time.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/sys/select.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/select.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/sigset.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/sys/resource.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/resource.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/unistd.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/posix_opt.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/environments.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/include/stddef.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/confname.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/getopt.h
+
+../../config.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/sys/time.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/features.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/sys/cdefs.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/wordsize.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/gnu/stubs.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/gnu/stubs-64.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/types.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/typesizes.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/time.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/time.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/sys/select.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/select.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/sigset.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/sys/resource.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/resource.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/unistd.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/posix_opt.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/environments.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/include/stddef.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/confname.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/getopt.h:

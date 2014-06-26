@@ -1,0 +1,14 @@
+Node = 1
+Version = 20130611
+Timeout = 50
+Memory = 4294967296,0
+Program = /home/zvm/temp/thrift-0.9.0/compiler/cpp/thrift
+Channel = /dev/stdin,/dev/stdin,0,0,4294967296,4294967296,0,0
+Channel = /home/zvm/temp/thrift-0.9.0/lib/cpp/test/zvsh-temp/stdout.1,/dev/stdout,0,0,0,0,4294967296,4294967296
+Channel = /home/zvm/temp/thrift-0.9.0/lib/cpp/test/zvsh-temp/stderr.1,/dev/stderr,0,0,0,0,4294967296,4294967296
+Channel = /home/zvm/temp/thrift-0.9.0/lib/cpp/test/zvsh.log,/dev/debug,0,0,0,0,4294967296,4294967296
+Channel = /home/zvm/temp/thrift-0.9.0/test/DebugProtoTest.thrift,/dev/1.DebugProtoTest.thrift,3,0,4294967296,4294967296,4294967296,4294967296
+Channel = /home/zvm/temp/thrift-0.9.0/lib/cpp/test/export.tar,/dev/2.export.tar,3,0,4294967296,4294967296,4294967296,4294967296
+Channel = /home/zvm/temp/thrift-0.9.0/lib/cpp/test/export.tar,/dev/3.export.tar,3,0,4294967296,4294967296,4294967296,4294967296
+Channel = /home/zvm/temp/thrift-0.9.0/compiler/cpp/thrift,/dev/self,3,0,4294967296,4294967296,0,0
+Channel = /home/zvm/temp/thrift-0.9.0/lib/cpp/test/zvsh-temp/nvram.1,/dev/nvram,3,0,4294967296,4294967296,4294967296,4294967296

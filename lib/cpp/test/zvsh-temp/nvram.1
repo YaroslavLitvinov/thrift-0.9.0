@@ -1,0 +1,11 @@
+[args]
+args = thrift --gen cpp:templates\x2ccob_style processor/proc.thrift
+[fstab]
+channel=/dev/1.export.tar,mountpoint=/,access=ro,removable=no
+channel=/dev/2.export.tar,mountpoint=/,access=wo,removable=no
+[mapping]
+channel=/dev/stdin,mode=char
+channel=/dev/stdout,mode=char
+channel=/dev/stderr,mode=char
+[debug]
+verbosity=4

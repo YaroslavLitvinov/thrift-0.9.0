@@ -1,0 +1,48 @@
+thrift-md5.o: src/md5.c src/md5.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/string.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/features.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/sys/cdefs.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/wordsize.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/gnu/stubs.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/gnu/stubs-64.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/include/stddef.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/string.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/string2.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/endian.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/endian.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/byteswap.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/types.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/typesizes.h \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/stdlib.h
+
+src/md5.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/string.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/features.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/sys/cdefs.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/wordsize.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/gnu/stubs.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/gnu/stubs-64.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/include/stddef.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/string.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/string2.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/endian.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/endian.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/byteswap.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/types.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/bits/typesizes.h:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/stdlib.h:
