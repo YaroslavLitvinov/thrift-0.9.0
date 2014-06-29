@@ -243,7 +243,7 @@
 #define HAVE_WORKING_VFORK 1
 
 /* define if zlib is available */
-/* #undef HAVE_ZLIB */
+#define HAVE_ZLIB /**/
 
 /* Define to 1 if the system has the type `_Bool'. */
 /* #undef HAVE__BOOL */

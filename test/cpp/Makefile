@@ -83,8 +83,7 @@ am_TestClient_OBJECTS = TestClient.$(OBJEXT)
 TestClient_OBJECTS = $(am_TestClient_OBJECTS)
 TestClient_DEPENDENCIES = libtestgencpp.la \
 	$(top_builddir)/lib/cpp/libthrift.la \
-	$(top_builddir)/lib/cpp/libthriftz.la \
-	$(top_builddir)/lib/cpp/libthriftnb.la
+	$(top_builddir)/lib/cpp/libthriftz.la
 am_TestServer_OBJECTS = TestServer.$(OBJEXT)
 TestServer_OBJECTS = $(am_TestServer_OBJECTS)
 TestServer_DEPENDENCIES = libtestgencpp.la \
@@ -177,12 +176,12 @@ FGREP = /bin/grep -F
 GCOV_CFLAGS = 
 GCOV_CXXFLAGS = 
 GCOV_LDFLAGS = 
-GLIB_CFLAGS = -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include  
-GLIB_LIBS = -lglib-2.0  
+GLIB_CFLAGS = 
+GLIB_LIBS = 
 GOARCH = amd64
 GOBIN = /usr/local/bin
-GOBJECT_CFLAGS = -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include  
-GOBJECT_LIBS = -lgobject-2.0 -lglib-2.0  
+GOBJECT_CFLAGS = 
+GOBJECT_LIBS = 
 GOINSTALL = /usr/local/bin/goinstall
 GOMAKE = /usr/local/bin/gomake
 GOROOT = /usr/local/share/go
@@ -241,11 +240,11 @@ PHP_PREFIX = /usr/lib/php
 PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
 PKG_CONFIG_PATH = 
-PYTHON = /usr/bin/python
-PYTHON_EXEC_PREFIX = ${exec_prefix}
-PYTHON_PLATFORM = linux2
-PYTHON_PREFIX = ${prefix}
-PYTHON_VERSION = 2.7
+PYTHON = 
+PYTHON_EXEC_PREFIX = 
+PYTHON_PLATFORM = 
+PYTHON_PREFIX = 
+PYTHON_VERSION = 
 PY_PREFIX = /usr
 QT_CFLAGS = 
 QT_LIBS = 
@@ -265,7 +264,7 @@ YACC = bison -y
 YFLAGS = 
 ZLIB_CPPFLAGS = 
 ZLIB_LDFLAGS = 
-ZLIB_LIBS = 
+ZLIB_LIBS = -lz
 abs_builddir = /home/zvm/temp/thrift-0.9.0/test/cpp
 abs_srcdir = /home/zvm/temp/thrift-0.9.0/test/cpp
 abs_top_builddir = /home/zvm/temp/thrift-0.9.0
@@ -307,13 +306,13 @@ mandir = ${datarootdir}/man
 mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-pkgpyexecdir = ${pyexecdir}/thrift
-pkgpythondir = ${pythondir}/thrift
+pkgpyexecdir = 
+pkgpythondir = 
 prefix = /opt/zerovm/x86_64-nacl
 program_transform_name = s,x,x,
 psdir = ${docdir}
-pyexecdir = ${exec_prefix}/lib/python2.7/site-packages
-pythondir = ${prefix}/lib/python2.7/site-packages
+pyexecdir = 
+pythondir = 
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
 srcdir = .
@@ -382,8 +381,7 @@ TestClient_LDADD = \
 	libtestgencpp.la \
 	$(top_builddir)/lib/cpp/libthrift.la \
 	$(top_builddir)/lib/cpp/libthriftz.la \
-	$(top_builddir)/lib/cpp/libthriftnb.la \
-	-levent -lboost_program_options
+	-lz -lboost_program_options
 
 StressTest_SOURCES = \
 	src/StressTest.cpp
@@ -404,6 +402,8 @@ StressTestNonBlocking_LDADD = \
 # Common thrift code generation rules
 #
 THRIFT = $(top_builddir)/compiler/cpp/thrift
+TMPTAR = export.tar
+ZRUN = zvsh --zvm-save-dir zvsh-temp --zvm-debug --zvm-image $(TMPTAR) --zvm-image $(TMPTAR),/,wo --zvm-verbosity 4 
 INCLUDES = \
 	-I$(top_srcdir)/lib/cpp/src -Igen-cpp
 
@@ -827,10 +827,16 @@ uninstall-am:
 
 
 gen-cpp/ThriftTest.cpp gen-cpp/ThriftTest_types.cpp gen-cpp/ThriftTest_constants.cpp: $(top_srcdir)/test/ThriftTest.thrift
-	$(THRIFT) --gen cpp:templates,cob_style -r $<
+	mkdir gen-cpp -p
+	tar -cf $(TMPTAR) gen-cpp $< ~/Pictures/magic5555550.png ~/Downloads/18052014017.mp4
+	$(ZRUN) $(THRIFT) --gen cpp:templates,cob_style -r $<
+	tar xvf $(TMPTAR) -C . > /dev/null 2>&1
 
 gen-cpp/ThriftTest.cpp gen-cpp/StressTest_types.cpp gen-cpp/StressTest_constants.cpp: $(top_srcdir)/test/StressTest.thrift
-	$(THRIFT) --gen cpp $<
+	mkdir gen-cpp -p
+	tar -cf $(TMPTAR) gen-cpp $< ~/Pictures/magic5555550.png ~/Downloads/18052014017.mp4
+	$(ZRUN) $(THRIFT) --gen cpp $<
+	tar xvf $(TMPTAR) -C . > /dev/null 2>&1
 
 clean-local:
 	$(RM) -r gen-cpp

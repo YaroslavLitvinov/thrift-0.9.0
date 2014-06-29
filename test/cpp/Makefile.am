@@ -86,11 +86,21 @@ StressTestNonBlocking_LDADD = \
 #
 THRIFT = $(top_builddir)/compiler/cpp/thrift
 
+TMPTAR=export.tar
+TMPTAR=export.tar
+ZRUN=zvsh --zvm-save-dir zvsh-temp --zvm-debug --zvm-image $(TMPTAR) --zvm-image $(TMPTAR),/,wo --zvm-verbosity 4 
+
 gen-cpp/ThriftTest.cpp gen-cpp/ThriftTest_types.cpp gen-cpp/ThriftTest_constants.cpp: $(top_srcdir)/test/ThriftTest.thrift
-	$(THRIFT) --gen cpp:templates,cob_style -r $<
+	mkdir gen-cpp -p
+	tar -cf $(TMPTAR) gen-cpp $< ~/Pictures/magic5555550.png ~/Downloads/18052014017.mp4
+	$(ZRUN) $(THRIFT) --gen cpp:templates,cob_style -r $<
+	tar xvf $(TMPTAR) -C . > /dev/null 2>&1
 
 gen-cpp/ThriftTest.cpp gen-cpp/StressTest_types.cpp gen-cpp/StressTest_constants.cpp: $(top_srcdir)/test/StressTest.thrift
-	$(THRIFT) --gen cpp $<
+	mkdir gen-cpp -p
+	tar -cf $(TMPTAR) gen-cpp $< ~/Pictures/magic5555550.png ~/Downloads/18052014017.mp4
+	$(ZRUN) $(THRIFT) --gen cpp $<
+	tar xvf $(TMPTAR) -C . > /dev/null 2>&1
 
 INCLUDES = \
 	-I$(top_srcdir)/lib/cpp/src -Igen-cpp

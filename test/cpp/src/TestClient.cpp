@@ -23,14 +23,15 @@
 #include <iostream>
 #include <unistd.h>
 #include <sys/time.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include <thrift/protocol/TBinaryProtocol.h>
 #include <thrift/protocol/TJSONProtocol.h>
 #include <thrift/transport/THttpClient.h>
 #include <thrift/transport/TTransportUtils.h>
-#include <thrift/transport/TSocket.h>
-#include <thrift/transport/TSSLSocket.h>
-#include <thrift/async/TEvhttpClientChannel.h>
-#include <thrift/server/TNonblockingServer.h> // <event.h>
+#include <thrift/transport/TFDTransport.h>
+#include <thrift/transport/TZlibTransport.h>
 
 #include <boost/shared_ptr.hpp>
 #include <boost/program_options.hpp>
@@ -46,8 +47,6 @@ using namespace apache::thrift::transport;
 using namespace thrift::test;
 using namespace apache::thrift::async;
 
-//extern uint32_t g_socket_syscalls;
-
 // Current time, microseconds since the epoch
 uint64_t now()
 {
@@ -60,54 +59,21 @@ uint64_t now()
   return ret;
 }
 
-static void testString_clientReturn(const char* host, int port, event_base *base, TProtocolFactory* protocolFactory, ThriftTestCobClient* client) {
-  (void) host;
-  (void) port;
-  (void) protocolFactory;
-  try {
-    string s;
-    client->recv_testString(s);
-    cout << "testString: " << s << endl;
-  } catch (TException& exn) {
-    cout << "Error: " << exn.what() << endl;    
-  }
-
-  event_base_loopbreak(base); // end test
-}
-
-static void testVoid_clientReturn(const char* host, int port, event_base *base, TProtocolFactory* protocolFactory, ThriftTestCobClient* client) {
-  try {
-    client->recv_testVoid();
-    cout << "testVoid" << endl;
-
-    // next test
-    delete client;
-    boost::shared_ptr<TAsyncChannel> channel(new TEvhttpClientChannel(host, "/", host, port, base));
-    client = new ThriftTestCobClient(channel, protocolFactory);
-    client->testString(tr1::bind(testString_clientReturn, host, port, base, protocolFactory, std::tr1::placeholders::_1), "Test");
-  } catch (TException& exn) {
-    cout << "Error: " << exn.what() << endl;    
-  }
-}
 
 int main(int argc, char** argv) {
-  string host = "localhost";
-  int port = 9090;
   int numTests = 1;
-  bool ssl = false;
-  string transport_type = "buffered";
+  string transport_type = "zfile";
   string protocol_type = "binary";
-  string domain_socket = "";
+  string input_channel = "/dev/stdin";
+  string output_channel = "/dev/stdout";
 
   program_options::options_description desc("Allowed options");
   desc.add_options()
       ("help,h", "produce help message")
-      ("host", program_options::value<string>(&host)->default_value(host), "Host to connect")
-      ("port", program_options::value<int>(&port)->default_value(port), "Port number to connect")
-	  ("domain-socket", program_options::value<string>(&domain_socket)->default_value(domain_socket), "Domain Socket (e.g. /tmp/ThriftTest.thrift), instead of host and port")
-      ("transport", program_options::value<string>(&transport_type)->default_value(transport_type), "Transport: buffered, framed, http, evhttp")
-      ("protocol", program_options::value<string>(&protocol_type)->default_value(protocol_type), "Protocol: binary, json")
-	  ("ssl", "Encrypted Transport using SSL")
+      ("input", program_options::value<string>(&input_channel)->default_value(input_channel), "Input channel: (default:/dev/stdin)")
+      ("output", program_options::value<string>(&output_channel)->default_value(output_channel), "Output channel: (default:/dev/stdout)")
+      ("transport", program_options::value<string>(&transport_type)->default_value(transport_type), "Transport: (default:zfile)")
+      ("protocol", program_options::value<string>(&protocol_type)->default_value(protocol_type), "Protocol: binary")
       ("testloops,n", program_options::value<int>(&numTests)->default_value(numTests), "Number of Tests")
   ;
 
@@ -123,17 +89,13 @@ int main(int argc, char** argv) {
   try {   
     if (!protocol_type.empty()) {
       if (protocol_type == "binary") {
-      } else if (protocol_type == "json") {
       } else {
           throw invalid_argument("Unknown protocol type "+protocol_type);
       }
     }
 
 	if (!transport_type.empty()) {
-      if (transport_type == "buffered") {
-      } else if (transport_type == "framed") {
-      } else if (transport_type == "http") {
-      } else if (transport_type == "evhttp") {
+      if (transport_type == "zfile") {
       } else {
           throw invalid_argument("Unknown transport type "+transport_type);
       }
@@ -145,76 +107,27 @@ int main(int argc, char** argv) {
     return 1;
   }
 
-  if (vm.count("ssl")) {
-    ssl = true;
-  }
-
   boost::shared_ptr<TTransport> transport;
   boost::shared_ptr<TProtocol> protocol;
 
-  boost::shared_ptr<TSocket> socket;
-  boost::shared_ptr<TSSLSocketFactory> factory;
+  int input_fd;
+  int output_fd;
+  input_fd  = open(input_channel.c_str(),  O_RDONLY);
+  output_fd = open(output_channel.c_str(), O_WRONLY);
 
-  if (ssl) {
-    factory = boost::shared_ptr<TSSLSocketFactory>(new TSSLSocketFactory());
-    factory->ciphers("ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH");
-    factory->loadTrustedCertificates("./trusted-ca-certificate.pem");
-    factory->authenticate(true);
-    socket = factory->createSocket(host, port);
-  } else {
-    if (domain_socket != "") {
-      socket = boost::shared_ptr<TSocket>(new TSocket(domain_socket));
-      port = 0;
-    }
-    else {
-      socket = boost::shared_ptr<TSocket>(new TSocket(host, port));
-    }
-  }
-
-  if (transport_type.compare("http") == 0) {
-    boost::shared_ptr<TTransport> httpSocket(new THttpClient(socket, host, "/service"));
-    transport = httpSocket;
-  } else if (transport_type.compare("framed") == 0){
-    boost::shared_ptr<TFramedTransport> framedSocket(new TFramedTransport(socket));
-    transport = framedSocket;
-  } else{
-    boost::shared_ptr<TBufferedTransport> bufferedSocket(new TBufferedTransport(socket));
-    transport = bufferedSocket;
-  }
-
-  if (protocol_type.compare("json") == 0) {
-    boost::shared_ptr<TProtocol> jsonProtocol(new TJSONProtocol(transport));
-    protocol = jsonProtocol;
-  } else{
-    boost::shared_ptr<TBinaryProtocol> binaryProtocol(new TBinaryProtocol(transport));
-    protocol = binaryProtocol;
-  }
-
+  if (transport_type.compare("zfile") == 0) {
+      shared_ptr<TTransport> stdin_trans(new TFDTransport(input_fd));
+      boost::shared_ptr<TZlibTransport> zlibTransport(new TZlibTransport(stdin_trans));
+      transport = zlibTransport;
+  } 
+  
+  boost::shared_ptr<TBinaryProtocol> binaryProtocol(new TBinaryProtocol(transport));
+  protocol = binaryProtocol;
+  
   // Connection info
-  cout << "Connecting (" << transport_type << "/" << protocol_type << ") to: " << domain_socket;
-  if (port != 0) {
-    cout << host << ":" << port;
-  }
-  cout << endl;
-
-  if (transport_type.compare("evhttp") == 0) {
-    event_base *base = event_base_new();
-    cout << "Libevent Version: " << event_get_version() << endl;
-    cout << "Libevent Method: " << event_base_get_method(base) << endl;
-#if LIBEVENT_VERSION_NUMBER >= 0x02000000
-    cout << "Libevent Features: 0x" << hex << event_base_get_features(base) << endl;
-#endif
-
-    boost::shared_ptr<TProtocolFactory> protocolFactory(new TBinaryProtocolFactory());
-
-    boost::shared_ptr<TAsyncChannel> channel(new TEvhttpClientChannel(host.c_str(), "/", host.c_str(), port, base));
-    ThriftTestCobClient* client = new ThriftTestCobClient(channel, protocolFactory.get());
-    client->testVoid(tr1::bind(testVoid_clientReturn, host.c_str(), port, base, protocolFactory.get(), std::tr1::placeholders::_1));
-    
-    event_base_loop(base, 0);
-    return 0;
-  }
-
+  cout << "Connecting (" << transport_type << "/" << protocol_type 
+       << ") to: " << output_channel 
+       << " / from: " << input_channel << endl;
 
   ThriftTestClient testClient(protocol);
 
@@ -225,7 +138,6 @@ int main(int argc, char** argv) {
   int failCount = 0;
   int test = 0;
   for (test = 0; test < numTests; ++test) {
-
     try {
       transport->open();
     } catch (TTransportException& ttx) {
@@ -236,7 +148,7 @@ int main(int argc, char** argv) {
     /**
      * CONNECT TEST
      */
-    printf("Test #%d, connect %s:%d\n", test+1, host.c_str(), port);
+    printf("Test #%d\n", test+1);
 
     uint64_t start = now();
 
