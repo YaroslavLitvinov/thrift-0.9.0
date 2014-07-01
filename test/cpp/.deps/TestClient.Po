@@ -303,9 +303,6 @@ TestClient.o: src/TestClient.cpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/scoped_array.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/smart_ptr/scoped_array.hpp \
  ../../lib/cpp/src/thrift/transport/TVirtualTransport.h \
- ../../lib/cpp/src/thrift/transport/THttpClient.h \
- ../../lib/cpp/src/thrift/transport/THttpTransport.h \
- ../../lib/cpp/src/thrift/transport/TVirtualTransport.h \
  ../../lib/cpp/src/thrift/transport/TTransportUtils.h \
  ../../lib/cpp/src/thrift/transport/TFileTransport.h \
  ../../lib/cpp/src/thrift/TProcessor.h \
@@ -367,6 +364,7 @@ TestClient.o: src/TestClient.cpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/c++/4.4.3/bits/stream_iterator.h \
  ../../lib/cpp/src/thrift/transport/TFDTransport.h \
  ../../lib/cpp/src/thrift/transport/TTransport.h \
+ ../../lib/cpp/src/thrift/transport/TVirtualTransport.h \
  ../../lib/cpp/src/thrift/transport/TZlibTransport.h \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/lexical_cast.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/c++/4.4.3/climits \
@@ -1448,12 +1446,6 @@ TestClient.o: src/TestClient.cpp \
 
 ../../lib/cpp/src/thrift/transport/TVirtualTransport.h:
 
-../../lib/cpp/src/thrift/transport/THttpClient.h:
-
-../../lib/cpp/src/thrift/transport/THttpTransport.h:
-
-../../lib/cpp/src/thrift/transport/TVirtualTransport.h:
-
 ../../lib/cpp/src/thrift/transport/TTransportUtils.h:
 
 ../../lib/cpp/src/thrift/transport/TFileTransport.h:
@@ -1575,6 +1567,8 @@ TestClient.o: src/TestClient.cpp \
 ../../lib/cpp/src/thrift/transport/TFDTransport.h:
 
 ../../lib/cpp/src/thrift/transport/TTransport.h:
+
+../../lib/cpp/src/thrift/transport/TVirtualTransport.h:
 
 ../../lib/cpp/src/thrift/transport/TZlibTransport.h:
 

@@ -1,0 +1,26 @@
+=======================================================================
+== Channels section intended to be used by template.sh and contains channels
+== description that must be added instead string  
+== into generated manifest file based on manifest.template file
+
+Channel = /dev/null, /dev/stdin, 0, 0, 999999, 999999, 0, 0
+Channel = /dev/stdout, /dev/stdout, 0, 0, 0, 0, 999999, 999999
+Channel = /dev/stderr, /dev/stderr, 0, 0, 0, 0, 999999, 999999
+Channel = /home/zvm/temp/thrift-0.9.0/test/cpp/TestClient.zlog, /dev/debug, 0, 0, 0, 0, 99999999, 99999999
+Channel = /home/zvm/temp/thrift-0.9.0/test/cpp/nvram, /dev/nvram, 0, 0, 999999, 999999, 0, 0
+Channel = tcp:1:, /dev/out/put, 0, 0, 0, 0, 999999999, 999999999
+Channel = tcp:1:, /dev/in/put, 0, 0, 999999999, 999999999, 0, 0
+=======================================================================
+
+=====================================================================
+== switches for zerovm. some of them used to control nexe, some
+== for the internal zerovm needs
+=====================================================================
+==Version = 20140509
+Version = 20130611
+Program = /home/zvm/temp/thrift-0.9.0/test/cpp/TestClient
+Memory = 4294967295, 0
+NameServer = udp:127.0.0.1:54321
+Timeout=20
+Node=2
+

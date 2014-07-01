@@ -88,8 +88,7 @@ am_TestServer_OBJECTS = TestServer.$(OBJEXT)
 TestServer_OBJECTS = $(am_TestServer_OBJECTS)
 TestServer_DEPENDENCIES = libtestgencpp.la \
 	$(top_builddir)/lib/cpp/libthrift.la \
-	$(top_builddir)/lib/cpp/libthriftz.la \
-	$(top_builddir)/lib/cpp/libthriftnb.la
+	$(top_builddir)/lib/cpp/libthriftz.la
 DEFAULT_INCLUDES = -I. -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -371,8 +370,7 @@ TestServer_LDADD = \
 	libtestgencpp.la \
 	$(top_builddir)/lib/cpp/libthrift.la \
 	$(top_builddir)/lib/cpp/libthriftz.la \
-	$(top_builddir)/lib/cpp/libthriftnb.la \
-	-levent -lboost_program_options
+	-lz -lboost_program_options
 
 TestClient_SOURCES = \
 	src/TestClient.cpp
