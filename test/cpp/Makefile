@@ -83,12 +83,14 @@ am_TestClient_OBJECTS = TestClient.$(OBJEXT)
 TestClient_OBJECTS = $(am_TestClient_OBJECTS)
 TestClient_DEPENDENCIES = libtestgencpp.la \
 	$(top_builddir)/lib/cpp/libthrift.la \
-	$(top_builddir)/lib/cpp/libthriftz.la
+	$(top_builddir)/lib/cpp/libthriftz.la \
+	$(top_builddir)/lib/cpp/libthriftnb.la
 am_TestServer_OBJECTS = TestServer.$(OBJEXT)
 TestServer_OBJECTS = $(am_TestServer_OBJECTS)
 TestServer_DEPENDENCIES = libtestgencpp.la \
 	$(top_builddir)/lib/cpp/libthrift.la \
-	$(top_builddir)/lib/cpp/libthriftz.la
+	$(top_builddir)/lib/cpp/libthriftz.la \
+	$(top_builddir)/lib/cpp/libthriftnb.la
 DEFAULT_INCLUDES = -I. -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -130,9 +132,9 @@ AUTOCONF = ${SHELL} /home/zvm/temp/thrift-0.9.0/missing --run autoconf
 AUTOHEADER = ${SHELL} /home/zvm/temp/thrift-0.9.0/missing --run autoheader
 AUTOMAKE = ${SHELL} /home/zvm/temp/thrift-0.9.0/missing --run automake-1.11
 AWK = mawk
-BOOST_CPPFLAGS = 
-BOOST_LDFLAGS = 
-BOOST_ROOT_PATH = 
+BOOST_CPPFLAGS = -I/opt/zerovm/x86_64-nacl/include
+BOOST_LDFLAGS = -L/opt/zerovm/x86_64-nacl/lib
+BOOST_ROOT_PATH = /opt/zerovm/x86_64-nacl
 BUNDLER = 
 CABAL = true
 CABAL_CONFIGURE_FLAGS = 
@@ -370,7 +372,8 @@ TestServer_LDADD = \
 	libtestgencpp.la \
 	$(top_builddir)/lib/cpp/libthrift.la \
 	$(top_builddir)/lib/cpp/libthriftz.la \
-	-lz -lboost_program_options
+	$(top_builddir)/lib/cpp/libthriftnb.la \
+	-levent -lboost_program_options
 
 TestClient_SOURCES = \
 	src/TestClient.cpp
@@ -379,7 +382,8 @@ TestClient_LDADD = \
 	libtestgencpp.la \
 	$(top_builddir)/lib/cpp/libthrift.la \
 	$(top_builddir)/lib/cpp/libthriftz.la \
-	-lz -lboost_program_options
+	$(top_builddir)/lib/cpp/libthriftnb.la \
+	-levent -lboost_program_options
 
 StressTest_SOURCES = \
 	src/StressTest.cpp

@@ -161,6 +161,7 @@ am__libthrift_la_SOURCES_DIST = src/thrift/Thrift.cpp \
 	src/thrift/transport/TSSLSocket.cpp \
 	src/thrift/transport/TSocketPool.cpp \
 	src/thrift/transport/TServerSocket.cpp \
+	src/thrift/transport/TChannelsChannel.cpp \
 	src/thrift/transport/TServerChannel.cpp \
 	src/thrift/transport/TSSLServerSocket.cpp \
 	src/thrift/transport/TTransportUtils.cpp \
@@ -187,7 +188,7 @@ am_libthrift_la_OBJECTS = Thrift.lo TApplicationException.lo \
 	TBase64Utils.lo TTransportException.lo TFDTransport.lo \
 	TFileTransport.lo TSimpleFileTransport.lo THttpTransport.lo \
 	THttpClient.lo THttpServer.lo TSocket.lo TPipe.lo \
-	TPipeServer.lo TSSLSocket.lo TSocketPool.lo TServerSocket.lo TServerChannel.lo \
+	TPipeServer.lo TSSLSocket.lo TSocketPool.lo TServerSocket.lo TChannelsTransport.lo TServerChannel.lo \
 	TSSLServerSocket.lo TTransportUtils.lo TBufferTransports.lo \
 	TServer.lo TSimpleServer.lo TThreadPoolServer.lo \
 	TThreadedServer.lo TAsyncChannel.lo PeekProcessor.lo \
@@ -299,9 +300,9 @@ AUTOCONF = ${SHELL} /home/zvm/temp/thrift-0.9.0/missing --run autoconf
 AUTOHEADER = ${SHELL} /home/zvm/temp/thrift-0.9.0/missing --run autoheader
 AUTOMAKE = ${SHELL} /home/zvm/temp/thrift-0.9.0/missing --run automake-1.11
 AWK = mawk
-BOOST_CPPFLAGS = 
-BOOST_LDFLAGS = 
-BOOST_ROOT_PATH = 
+BOOST_CPPFLAGS = -I/opt/zerovm/x86_64-nacl/include
+BOOST_LDFLAGS = -L/opt/zerovm/x86_64-nacl/lib
+BOOST_ROOT_PATH = /opt/zerovm/x86_64-nacl
 BUNDLER = 
 CABAL = true
 CABAL_CONFIGURE_FLAGS = 
@@ -525,6 +526,7 @@ libthrift_la_SOURCES = src/thrift/Thrift.cpp \
 	src/thrift/transport/TSSLSocket.cpp \
 	src/thrift/transport/TSocketPool.cpp \
 	src/thrift/transport/TServerSocket.cpp \
+	src/thrift/transport/TChannelsTransport.cpp \
 	src/thrift/transport/TServerChannel.cpp \
 	src/thrift/transport/TSSLServerSocket.cpp \
 	src/thrift/transport/TTransportUtils.cpp \
@@ -604,6 +606,7 @@ include_transport_HEADERS = \
                          src/thrift/transport/TFileTransport.h \
                          src/thrift/transport/TSimpleFileTransport.h \
                          src/thrift/transport/TServerSocket.h \
+                         src/thrift/transport/TChannelsTransport.h \
                          src/thrift/transport/TServerChannel.h \
                          src/thrift/transport/TSSLServerSocket.h \
                          src/thrift/transport/TServerTransport.h \
@@ -783,6 +786,7 @@ include ./$(DEPDIR)/TSSLServerSocket.Plo
 include ./$(DEPDIR)/TSSLSocket.Plo
 include ./$(DEPDIR)/TServer.Plo
 include ./$(DEPDIR)/TServerSocket.Plo
+include ./$(DEPDIR)/TChannelsTransport.Plo
 include ./$(DEPDIR)/TServerChannel.Plo
 include ./$(DEPDIR)/TSimpleFileTransport.Plo
 include ./$(DEPDIR)/TSimpleServer.Plo
@@ -980,6 +984,13 @@ TSocketPool.lo: src/thrift/transport/TSocketPool.cpp
 #	source='src/thrift/transport/TSocketPool.cpp' object='TSocketPool.lo' libtool=yes \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TSocketPool.lo `test -f 'src/thrift/transport/TSocketPool.cpp' || echo '$(srcdir)/'`src/thrift/transport/TSocketPool.cpp
+
+TChannelsTransport.lo: src/thrift/transport/TChannelsTransport.cpp
+	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TChannelsTransport.lo -MD -MP -MF $(DEPDIR)/TChannelsTransport.Tpo -c -o TChannelsTransport.lo `test -f 'src/thrift/transport/TChannelsTransport.cpp' || echo '$(srcdir)/'`src/thrift/transport/TChannelsTransport.cpp
+	$(am__mv) $(DEPDIR)/TChannelsTransport.Tpo $(DEPDIR)/TChannelsTransport.Plo
+#	source='src/thrift/transport/TChannelsTransport.cpp' object='TChannelsTransport.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TChannelsTransport.lo `test -f 'src/thrift/transport/TChannelsTransport.cpp' || echo '$(srcdir)/'`src/thrift/transport/TChannelsTransport.cpp
 
 TServerSocket.lo: src/thrift/transport/TServerSocket.cpp
 	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TServerSocket.lo -MD -MP -MF $(DEPDIR)/TServerSocket.Tpo -c -o TServerSocket.lo `test -f 'src/thrift/transport/TServerSocket.cpp' || echo '$(srcdir)/'`src/thrift/transport/TServerSocket.cpp

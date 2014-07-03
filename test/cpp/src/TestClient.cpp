@@ -27,9 +27,9 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <thrift/protocol/TBinaryProtocol.h>
+#include <thrift/transport/TChannelsTransport.h>
 #include <thrift/protocol/TDebugProtocol.h>
 #include <thrift/protocol/TJSONProtocol.h>
-#include <thrift/transport/TTransportUtils.h> //TPipedTransport
 #include <thrift/transport/TFDTransport.h>
 #include <thrift/transport/TZlibTransport.h>
 
@@ -116,20 +116,16 @@ int main(int argc, char** argv) {
     output_fd = open(output_channel.c_str(), O_WRONLY);
 
     if (transport_type.compare("zfile") == 0) {
-	//shared_ptr<TTransport> in_trans(new TFDTransport(input_fd));
+	shared_ptr<TTransport> in_trans(new TFDTransport(input_fd));
 	shared_ptr<TTransport> out_trans(new TFDTransport(output_fd));
-	//boost::shared_ptr<TZlibTransport> in_ztrans(new TZlibTransport(in_trans));
+	boost::shared_ptr<TZlibTransport> in_ztrans(new TZlibTransport(in_trans));
 	boost::shared_ptr<TZlibTransport> out_ztrans(new TZlibTransport(out_trans));
-	//boost::shared_ptr<TPipedTransport> pipedTransport(new TPipedTransport(in_ztrans, out_ztrans));
-	//transport = pipedTransport;
-	transport = out_ztrans;
+	boost::shared_ptr<TChannelsTransport> channelsTransport(new TChannelsTransport(in_ztrans, out_ztrans));
+	transport = channelsTransport;
     } 
   
-    //boost::shared_ptr<TBinaryProtocol> binaryProtocol(new TBinaryProtocol(transport));
-    //protocol = binaryProtocol;
-    boost::shared_ptr<TDebugProtocol> debugProtocol(new TDebugProtocol(transport));
-    protocol = debugProtocol;
-
+    boost::shared_ptr<TBinaryProtocol> binaryProtocol(new TBinaryProtocol(transport));
+    protocol = binaryProtocol;
   
     // Connection info
     cout << "Connecting (" << transport_type << "/" << protocol_type 

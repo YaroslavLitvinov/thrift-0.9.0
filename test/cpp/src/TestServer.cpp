@@ -29,7 +29,7 @@
 #include <thrift/async/TAsyncBufferProcessor.h>
 #include <thrift/async/TAsyncProtocolProcessor.h>
 #include <thrift/transport/TPipeServer.h>
-#include <thrift/transport/TTransportUtils.h>
+#include <thrift/transport/TChannelsTransport.h>
 #include <thrift/transport/TFDTransport.h>
 #include <thrift/transport/TZlibTransport.h>
 #include <thrift/transport/TServerChannel.h>
@@ -567,7 +567,7 @@ int main(int argc, char **argv) {
 	// boost::shared_ptr<TZlibTransport> out_ztrans(new TZlibTransport(out_trans));
 	//(new TPipedTransport(in_ztrans, out_ztrans));
 
-	boost::shared_ptr<TPipedTransportFactory> channelsFactory(new TPipedTransportFactory());
+	boost::shared_ptr<TChannelsTransportFactory> channelsFactory(new TChannelsTransportFactory());
 	transportFactory = channelsFactory;
     } 
 

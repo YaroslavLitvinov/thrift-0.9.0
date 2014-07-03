@@ -30,7 +30,7 @@
 
 #include "TSocket.h"
 #include "TServerChannel.h"
-#include <thrift/transport/TTransportUtils.h>
+#include <thrift/transport/TChannelsTransport.h>
 #include <thrift/transport/TFDTransport.h>
 #include <thrift/transport/TZlibTransport.h>
 
@@ -97,7 +97,7 @@ boost::shared_ptr<TTransport> TServerChannel::createTransport(int in_fd, int out
     boost::shared_ptr<TZlibTransport> in_ztrans(new TZlibTransport(in_trans));
     boost::shared_ptr<TZlibTransport> out_ztrans(new TZlibTransport(out_trans));
 
-    boost::shared_ptr<TPipedTransport> transport(new TPipedTransport(in_ztrans, out_ztrans));
+    boost::shared_ptr<TChannelsTransport> transport(new TChannelsTransport(in_ztrans, out_ztrans));
     return transport;    
 }
 
