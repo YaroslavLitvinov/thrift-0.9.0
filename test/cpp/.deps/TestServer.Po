@@ -331,67 +331,7 @@ TestServer.o: src/TestServer.cpp \
  ../../lib/cpp/src/thrift/transport/TPipeServer.h \
  ../../lib/cpp/src/thrift/transport/TServerTransport.h \
  ../../lib/cpp/src/thrift/transport/TServerSocket.h \
- ../../lib/cpp/src/thrift/transport/TTransportUtils.h \
- ../../lib/cpp/src/thrift/transport/TFileTransport.h \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/scoped_ptr.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/smart_ptr/scoped_ptr.hpp \
- ../../lib/cpp/src/thrift/concurrency/Mutex.h \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/noncopyable.hpp \
- ../../lib/cpp/src/thrift/concurrency/Monitor.h \
- ../../lib/cpp/src/thrift/concurrency/Exception.h \
- ../../lib/cpp/src/thrift/concurrency/Mutex.h \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/utility.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/utility/addressof.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/utility/base_from_member.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/repetition/enum_binary_params.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/tuple/elem.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/facilities/overload.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/variadic/size.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/tuple/rem.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/variadic/elem.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/repetition/enum_params.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/repetition/repeat_from_to.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/add.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/dec.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/control/while.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/fold_left.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/detail/fold_left.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/control/expr_iif.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/adt.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/detail/is_binary.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/detail/check.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/logical/compl.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/fold_right.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/detail/fold_right.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/reverse.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/logical/bitand.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/control/detail/while.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/sub.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/remove_cv.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/broken_compiler_spec.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/remove_reference.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/utility/binary.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/control/deduce_d.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/facilities/identity.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/cat.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/fold_left.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/seq.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/elem.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/size.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/transform.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/mod.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/detail/div_base.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/comparison/less_equal.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/logical/not.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/utility/identity_type.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/function_traits.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/add_pointer.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/next_prior.hpp \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/c++/4.4.3/iterator \
- /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/c++/4.4.3/bits/stream_iterator.h \
- ../../lib/cpp/src/thrift/transport/TFDTransport.h \
- ../../lib/cpp/src/thrift/transport/TVirtualTransport.h \
- ../../lib/cpp/src/thrift/transport/TZlibTransport.h \
+ ../../lib/cpp/src/thrift/transport/TChannelsTransport.h \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/lexical_cast.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/c++/4.4.3/climits \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/c++/4.4.3/cstdio \
@@ -412,12 +352,36 @@ TestServer.o: src/TestServer.cpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/mpl/limits/arity.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/logical/and.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/logical/bitand.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/identity.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/facilities/identity.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/empty.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/add.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/dec.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/control/while.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/fold_left.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/detail/fold_left.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/control/expr_iif.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/adt.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/detail/is_binary.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/detail/check.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/logical/compl.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/fold_right.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/detail/fold_right.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/reverse.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/control/detail/while.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/tuple/elem.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/facilities/overload.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/variadic/size.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/tuple/rem.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/variadic/elem.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/sub.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/is_pointer.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/is_member_pointer.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/is_member_function_pointer.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/remove_cv.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/broken_compiler_spec.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/detail/lcast_precision.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/integer_traits.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/c++/4.4.3/locale \
@@ -445,6 +409,8 @@ TestServer.o: src/TestServer.cpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/swap.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/utility/swap.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/detail/iterator.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/c++/4.4.3/iterator \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/c++/4.4.3/bits/stream_iterator.h \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/functional/hash_fwd.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/functional/hash/hash_fwd.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/numeric/conversion/cast.hpp \
@@ -469,6 +435,7 @@ TestServer.o: src/TestServer.cpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/array/elem.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/array/data.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/array/size.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/repetition/enum_params.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/repetition/enum_trailing_params.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/mpl/aux_/config/has_apply.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/mpl/aux_/msvc_never_true.hpp \
@@ -529,6 +496,7 @@ TestServer.o: src/TestServer.cpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/is_base_and_derived.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/is_class.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/is_fundamental.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/remove_reference.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/has_right_shift.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/math/special_functions/sign.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/math/tools/config.hpp \
@@ -742,6 +710,8 @@ TestServer.o: src/TestServer.cpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/iterator/iterator_categories.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/detail/indirect_traits.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/iterator/detail/enable_if.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/utility/addressof.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/add_pointer.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/remove_const.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/is_pod.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/is_scalar.hpp \
@@ -764,6 +734,7 @@ TestServer.o: src/TestServer.cpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/range/rbegin.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/range/reverse_iterator.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/iterator/reverse_iterator.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/next_prior.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/iterator/iterator_adaptor.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/range/rend.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/range/algorithm/equal.hpp \
@@ -779,6 +750,9 @@ TestServer.o: src/TestServer.cpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/for_each_i.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/repetition/for.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/repetition/detail/for.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/seq.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/elem.hpp \
+ /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/size.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/enum.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/concept/detail/concept_undef.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/iterator/iterator_concepts.hpp \
@@ -788,6 +762,9 @@ TestServer.o: src/TestServer.cpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/container/container_fwd.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/integer.hpp \
  /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/integer_fwd.hpp \
+ ../../lib/cpp/src/thrift/transport/TFDTransport.h \
+ ../../lib/cpp/src/thrift/transport/TVirtualTransport.h \
+ ../../lib/cpp/src/thrift/transport/TZlibTransport.h \
  ../../lib/cpp/src/thrift/transport/TServerChannel.h gen-cpp/ThriftTest.h \
  ../../lib/cpp/src/thrift/TDispatchProcessor.h \
  ../../lib/cpp/src/thrift/TProcessor.h \
@@ -1526,127 +1503,7 @@ TestServer.o: src/TestServer.cpp \
 
 ../../lib/cpp/src/thrift/transport/TServerSocket.h:
 
-../../lib/cpp/src/thrift/transport/TTransportUtils.h:
-
-../../lib/cpp/src/thrift/transport/TFileTransport.h:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/scoped_ptr.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/smart_ptr/scoped_ptr.hpp:
-
-../../lib/cpp/src/thrift/concurrency/Mutex.h:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/noncopyable.hpp:
-
-../../lib/cpp/src/thrift/concurrency/Monitor.h:
-
-../../lib/cpp/src/thrift/concurrency/Exception.h:
-
-../../lib/cpp/src/thrift/concurrency/Mutex.h:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/utility.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/utility/addressof.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/utility/base_from_member.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/repetition/enum_binary_params.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/tuple/elem.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/facilities/overload.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/variadic/size.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/tuple/rem.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/variadic/elem.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/repetition/enum_params.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/repetition/repeat_from_to.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/add.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/dec.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/control/while.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/fold_left.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/detail/fold_left.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/control/expr_iif.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/adt.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/detail/is_binary.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/detail/check.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/logical/compl.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/fold_right.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/detail/fold_right.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/reverse.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/logical/bitand.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/control/detail/while.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/sub.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/remove_cv.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/broken_compiler_spec.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/remove_reference.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/utility/binary.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/control/deduce_d.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/facilities/identity.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/cat.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/fold_left.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/seq.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/elem.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/size.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/transform.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/mod.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/detail/div_base.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/comparison/less_equal.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/logical/not.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/utility/identity_type.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/function_traits.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/add_pointer.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/next_prior.hpp:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/c++/4.4.3/iterator:
-
-/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/c++/4.4.3/bits/stream_iterator.h:
-
-../../lib/cpp/src/thrift/transport/TFDTransport.h:
-
-../../lib/cpp/src/thrift/transport/TVirtualTransport.h:
-
-../../lib/cpp/src/thrift/transport/TZlibTransport.h:
+../../lib/cpp/src/thrift/transport/TChannelsTransport.h:
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/lexical_cast.hpp:
 
@@ -1688,9 +1545,53 @@ TestServer.o: src/TestServer.cpp \
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/logical/and.hpp:
 
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/logical/bitand.hpp:
+
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/identity.hpp:
 
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/facilities/identity.hpp:
+
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/empty.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/add.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/dec.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/control/while.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/fold_left.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/detail/fold_left.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/control/expr_iif.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/adt.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/detail/is_binary.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/detail/check.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/logical/compl.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/fold_right.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/detail/fold_right.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/list/reverse.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/control/detail/while.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/tuple/elem.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/facilities/overload.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/variadic/size.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/tuple/rem.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/variadic/elem.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/arithmetic/sub.hpp:
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/is_pointer.hpp:
 
@@ -1699,6 +1600,10 @@ TestServer.o: src/TestServer.cpp \
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/is_member_function_pointer.hpp:
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/remove_cv.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/broken_compiler_spec.hpp:
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/detail/lcast_precision.hpp:
 
@@ -1754,6 +1659,10 @@ TestServer.o: src/TestServer.cpp \
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/detail/iterator.hpp:
 
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/c++/4.4.3/iterator:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/c++/4.4.3/bits/stream_iterator.h:
+
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/functional/hash_fwd.hpp:
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/functional/hash/hash_fwd.hpp:
@@ -1801,6 +1710,8 @@ TestServer.o: src/TestServer.cpp \
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/array/data.hpp:
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/array/size.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/repetition/enum_params.hpp:
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/repetition/enum_trailing_params.hpp:
 
@@ -1921,6 +1832,8 @@ TestServer.o: src/TestServer.cpp \
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/is_class.hpp:
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/is_fundamental.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/remove_reference.hpp:
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/has_right_shift.hpp:
 
@@ -2348,6 +2261,10 @@ TestServer.o: src/TestServer.cpp \
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/iterator/detail/enable_if.hpp:
 
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/utility/addressof.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/add_pointer.hpp:
+
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/remove_const.hpp:
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/type_traits/is_pod.hpp:
@@ -2392,6 +2309,8 @@ TestServer.o: src/TestServer.cpp \
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/iterator/reverse_iterator.hpp:
 
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/next_prior.hpp:
+
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/iterator/iterator_adaptor.hpp:
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/range/rend.hpp:
@@ -2422,6 +2341,12 @@ TestServer.o: src/TestServer.cpp \
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/repetition/detail/for.hpp:
 
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/seq.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/elem.hpp:
+
+/opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/size.hpp:
+
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/preprocessor/seq/enum.hpp:
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/concept/detail/concept_undef.hpp:
@@ -2439,6 +2364,12 @@ TestServer.o: src/TestServer.cpp \
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/integer.hpp:
 
 /opt/zerovm/lib/gcc/x86_64-nacl/4.4.3/../../../../x86_64-nacl/include/boost/integer_fwd.hpp:
+
+../../lib/cpp/src/thrift/transport/TFDTransport.h:
+
+../../lib/cpp/src/thrift/transport/TVirtualTransport.h:
+
+../../lib/cpp/src/thrift/transport/TZlibTransport.h:
 
 ../../lib/cpp/src/thrift/transport/TServerChannel.h:
 

@@ -548,7 +548,7 @@ processor_test_LDADD = libprocessortest.la \
 #
 THRIFT = $(top_builddir)/compiler/cpp/thrift
 TMPTAR = export.tar
-ZRUN = zvsh --zvm-save-dir zvsh-temp --zvm-debug --zvm-image $(TMPTAR) --zvm-image $(TMPTAR),/,wo --zvm-verbosity 4 
+ZRUN = ~/temp/zvsh-trace/zvsh --zvm-save-dir zvsh-temp --zvm-debug --zvm-image $(TMPTAR) --zvm-image $(TMPTAR),/,wo --zvm-verbosity 4 
 INCLUDES = \
 	-I$(top_srcdir)/lib/cpp/src
 
@@ -1068,27 +1068,27 @@ DebugProtoTest_extras.o: gen-cpp/DebugProtoTest_types.h
 
 gen-cpp/DebugProtoTest_types.cpp gen-cpp/DebugProtoTest_types.h: $(top_srcdir)/test/DebugProtoTest.thrift
 	mkdir gen-cpp -p
-	tar -cf $(TMPTAR) gen-cpp $< ~/Pictures/magic5555550.png ~/Downloads/18052014017.mp4
-	$(ZRUN) $(THRIFT) --gen cpp:dense $<
+	tar -cf $(TMPTAR) gen-cpp $< --transform 's@'$<'@'$(notdir $<)'@'
+	$(ZRUN) $(THRIFT) --gen cpp:dense /test/$(notdir $<) 
 	tar xvf $(TMPTAR) -C . > /dev/null 2>&1
 
 gen-cpp/OptionalRequiredTest_types.cpp gen-cpp/OptionalRequiredTest_types.h: $(top_srcdir)/test/OptionalRequiredTest.thrift
-	tar -cf $(TMPTAR) gen-cpp $< ~/Pictures/magic5555550.png ~/Downloads/18052014017.mp4
+	tar -cf $(TMPTAR) gen-cpp $<
 	$(ZRUN) $(THRIFT) --gen cpp:dense $<
 	tar xvf $(TMPTAR) -C . > /dev/null 2>&1
 
 gen-cpp/Service.cpp gen-cpp/StressTest_types.cpp: $(top_srcdir)/test/StressTest.thrift
-	tar -cf $(TMPTAR) gen-cpp $< ~/Pictures/magic5555550.png ~/Downloads/18052014017.mp4
+	tar -cf $(TMPTAR) gen-cpp $<
 	$(ZRUN) $(THRIFT) --gen cpp:dense $<
 	tar xvf $(TMPTAR) -C . > /dev/null 2>&1
 
 gen-cpp/SecondService.cpp gen-cpp/ThriftTest_constants.cpp gen-cpp/ThriftTest.cpp gen-cpp/ThriftTest_types.cpp gen-cpp/ThriftTest_types.h: $(top_srcdir)/test/ThriftTest.thrift
-	tar -cf $(TMPTAR) gen-cpp $< ~/Pictures/magic5555550.png ~/Downloads/18052014017.mp4
+	tar -cf $(TMPTAR) gen-cpp $<
 	$(ZRUN) $(THRIFT) --gen cpp:dense $<
 	tar xvf $(TMPTAR) -C . > /dev/null 2>&1
 
 gen-cpp/ChildService.cpp: processor/proc.thrift
-	tar -cf $(TMPTAR) gen-cpp $< ~/Pictures/magic5555550.png ~/Downloads/18052014017.mp4
+	tar -cf $(TMPTAR) gen-cpp $<
 	$(ZRUN) $(THRIFT) --gen cpp:templates,cob_style $<
 	tar xvf $(TMPTAR) -C . > /dev/null 2>&1
 

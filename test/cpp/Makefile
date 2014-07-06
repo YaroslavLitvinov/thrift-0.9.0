@@ -83,14 +83,12 @@ am_TestClient_OBJECTS = TestClient.$(OBJEXT)
 TestClient_OBJECTS = $(am_TestClient_OBJECTS)
 TestClient_DEPENDENCIES = libtestgencpp.la \
 	$(top_builddir)/lib/cpp/libthrift.la \
-	$(top_builddir)/lib/cpp/libthriftz.la \
-	$(top_builddir)/lib/cpp/libthriftnb.la
+	$(top_builddir)/lib/cpp/libthriftz.la
 am_TestServer_OBJECTS = TestServer.$(OBJEXT)
 TestServer_OBJECTS = $(am_TestServer_OBJECTS)
 TestServer_DEPENDENCIES = libtestgencpp.la \
 	$(top_builddir)/lib/cpp/libthrift.la \
-	$(top_builddir)/lib/cpp/libthriftz.la \
-	$(top_builddir)/lib/cpp/libthriftnb.la
+	$(top_builddir)/lib/cpp/libthriftz.la
 DEFAULT_INCLUDES = -I. -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -372,8 +370,7 @@ TestServer_LDADD = \
 	libtestgencpp.la \
 	$(top_builddir)/lib/cpp/libthrift.la \
 	$(top_builddir)/lib/cpp/libthriftz.la \
-	$(top_builddir)/lib/cpp/libthriftnb.la \
-	-levent -lboost_program_options
+	-lz -lboost_program_options
 
 TestClient_SOURCES = \
 	src/TestClient.cpp
@@ -382,8 +379,7 @@ TestClient_LDADD = \
 	libtestgencpp.la \
 	$(top_builddir)/lib/cpp/libthrift.la \
 	$(top_builddir)/lib/cpp/libthriftz.la \
-	$(top_builddir)/lib/cpp/libthriftnb.la \
-	-levent -lboost_program_options
+	-lz -lboost_program_options
 
 StressTest_SOURCES = \
 	src/StressTest.cpp
@@ -405,7 +401,7 @@ StressTestNonBlocking_LDADD = \
 #
 THRIFT = $(top_builddir)/compiler/cpp/thrift
 TMPTAR = export.tar
-ZRUN = zvsh --zvm-save-dir zvsh-temp --zvm-debug --zvm-image $(TMPTAR) --zvm-image $(TMPTAR),/,wo --zvm-verbosity 4 
+ZRUN = ~/temp/zvsh-trace/zvsh --zvm-save-dir zvsh-temp --zvm-debug --zvm-image $(TMPTAR) --zvm-image $(TMPTAR),/,wo --zvm-verbosity 4 
 INCLUDES = \
 	-I$(top_srcdir)/lib/cpp/src -Igen-cpp
 
@@ -420,7 +416,7 @@ EXTRA_DIST = \
 	realloc/realloc_test.c \
 	realloc/Makefile
 
-all: all-am
+all: all-am ptrace.c
 
 .SUFFIXES:
 .SUFFIXES: .cpp .lo .o .obj
@@ -830,13 +826,13 @@ uninstall-am:
 
 gen-cpp/ThriftTest.cpp gen-cpp/ThriftTest_types.cpp gen-cpp/ThriftTest_constants.cpp: $(top_srcdir)/test/ThriftTest.thrift
 	mkdir gen-cpp -p
-	tar -cf $(TMPTAR) gen-cpp $< ~/Pictures/magic5555550.png ~/Downloads/18052014017.mp4
+	tar -cf $(TMPTAR) gen-cpp $<
 	$(ZRUN) $(THRIFT) --gen cpp:templates,cob_style -r $<
 	tar xvf $(TMPTAR) -C . > /dev/null 2>&1
 
 gen-cpp/ThriftTest.cpp gen-cpp/StressTest_types.cpp gen-cpp/StressTest_constants.cpp: $(top_srcdir)/test/StressTest.thrift
 	mkdir gen-cpp -p
-	tar -cf $(TMPTAR) gen-cpp $< ~/Pictures/magic5555550.png ~/Downloads/18052014017.mp4
+	tar -cf $(TMPTAR) gen-cpp $<
 	$(ZRUN) $(THRIFT) --gen cpp $<
 	tar xvf $(TMPTAR) -C . > /dev/null 2>&1
 
